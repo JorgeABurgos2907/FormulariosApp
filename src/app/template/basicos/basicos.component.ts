@@ -14,7 +14,7 @@ export class BasicosComponent implements OnInit {
   initForm = {
     productor: '',
     precio: 10,
-    producto: 10
+    producto:10
   }
 
   constructor() { }
