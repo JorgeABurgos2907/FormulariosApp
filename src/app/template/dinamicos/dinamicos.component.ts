@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 
 interface Persona {
   nombre: string;
-  favoritos: []
+  favoritos: Favorito[]
 }
 
 interface Favorito {
@@ -19,21 +19,29 @@ interface Favorito {
   styles: [
   ]
 })
-export class DinamicosComponent implements OnInit {
-
-  constructor() { }
+export class DinamicosComponent{
 
   @ViewChild('miFormulario') miFormulario !: NgForm;
 
-  ngOnInit(): void {
+  persona: Persona = {
+    nombre: 'Fernando',
+    favoritos: [
+      { id: 1, nombre: 'Metal'},
+      { id: 2, nombre: 'Halo'}
+    ]
   }
 
-  guardar(){
 
+  guardar(){
+    console.log('formulario posteado')
   }
 
   nombreValido():boolean{
     return this.miFormulario?.controls.nombre?.invalid && this.miFormulario?.controls.nombre?.touched
+  }
+
+  eliminar(index: number){
+    this.persona.favoritos.splice(index,1)
   }
 
 }
