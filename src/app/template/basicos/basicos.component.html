@@ -45,8 +45,11 @@
                     <input type="number"
                         class="form-control"
                         name="existencias"
+                        customMin
+                        [minimo]="0"
                         ngModel
-                        placeholder="Existencias del producto">
+                        placeholder="Existencias del producto"
+                        required>
                     
                 </div>
             </div>
