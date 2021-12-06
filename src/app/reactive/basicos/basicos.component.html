@@ -3,12 +3,13 @@
 
 <div class="row">
     <div class="col">
-        <form autocomplete="off">
+        <form autocomplete="off" [formGroup]="miFormulario">
             <div class="mb-3 row">
                 <label class="col-sm col-form-label">Producto</label>
                 <div class="col-sm-9">
                     <input type="text"
                         class="form-control"
+                        formControlName= "nombre"
                         placeholder="Nombre del producto">
                     <span class="form-text text-danger" >
                         Debe ser de 3 letras
@@ -22,6 +23,7 @@
                 <div class="col-sm-9">
                     <input type="number"
                         class="form-control"
+                        formControlName= "precio"
                         placeholder="Nombre del precio">
                     <span class="form-text text-danger">
                         El precio debe ser 0 o mayor
@@ -35,6 +37,7 @@
                 <div class="col-sm-9">
                     <input type="number"
                         class="form-control"
+                        formControlName= "existencias"
                         placeholder="Existencias del producto">
                     
                 </div>
@@ -54,7 +57,7 @@
     </div>
 </div>
 
-<!-- <div class="row">
+<div class="row">
     <div class="col">
         <span>Valid</span>
         <pre>{{miFormulario.valid }}</pre>
@@ -65,8 +68,8 @@
         <span>Touched</span>
         <pre>{{miFormulario.touched }}</pre>
 
-        <span>Valid</span>
+        <span>Value</span>
         <pre>{{miFormulario.value | json }}</pre>
 
     </div>
-</div> -->
+</div>
