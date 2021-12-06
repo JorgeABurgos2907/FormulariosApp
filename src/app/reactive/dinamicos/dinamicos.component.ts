@@ -51,5 +51,9 @@ export class DinamicosComponent {
     
   }
 
+  borrar(index: number){
+    this.favoritosArr.removeAt(index);
+  }
+
 
 }
